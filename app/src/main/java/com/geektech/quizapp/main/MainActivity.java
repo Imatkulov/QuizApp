@@ -16,8 +16,6 @@ import com.geektech.quizapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    private MainViewModel mViewModel;
-
     BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
@@ -26,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         viewPager = findViewById(R.id.viewpager);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -50,11 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
+        viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 switch (position){
@@ -68,9 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         bottomNavigationView.setSelectedItemId(R.id.settings);
                         break;
                 }
-            }
-            @Override
-            public void onPageScrollStateChanged(int state) {
             }
         });
     }
