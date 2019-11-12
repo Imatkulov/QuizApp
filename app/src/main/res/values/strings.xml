@@ -27,14 +27,11 @@
         <item>Entertainment: Japanese Anime &amp; Manga</item>
         <item>Entertainment: Cartoon &amp; Animations</item>
     </string-array>
+
     <string-array name="difficulty_list">
         <item>Any</item>
         <item>Easy</item>
         <item>Medium</item>
         <item>Hard</item>
     </string-array>
-    1
-    Downloading1
-
-
 </resources>

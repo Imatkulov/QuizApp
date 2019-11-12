@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="page_main_margin">64dp</dimen>
+    <dimen name="page_history_margin">18dp</dimen>
+
+</resources>
