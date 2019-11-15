@@ -1,4 +1,4 @@
-package com.geektech.quizapp.history;
+package com.geektech.quizapp.presentation.history.recycler;
 
 import android.view.View;
 import android.widget.ImageView;

@@ -1,4 +1,4 @@
-package com.geektech.quizapp.history;
+package com.geektech.quizapp.presentation.history;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.geektech.quizapp.R;
+import com.geektech.quizapp.presentation.history.recycler.HistoryAdapter;
 
 public class HistoryFragment extends Fragment {
 

@@ -5,20 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".main.MainFragment">
+    tools:context=".presentation.main.MainFragment">
 
     <TextView
         android:id="@+id/mTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="QUIZ"
+        android:text="Gegraphy"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="24sp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+        <SeekBar
+        android:id="@+id/q_seek_bar"
+        android:layout_width="240dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="12dp"
+        android:max="50"
+        android:progress="50"
+        app:layout_constraintTop_toBottomOf="@id/mTextView"
+        app:layout_constraintEnd_toEndOf="@id/mTextView"/>
 
 
 

@@ -1,4 +1,4 @@
-package com.geektech.quizapp.result;
+package com.geektech.quizapp.presentation.result;
 
 import androidx.appcompat.app.AppCompatActivity;
 

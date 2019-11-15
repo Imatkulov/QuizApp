@@ -1,4 +1,4 @@
-package com.geektech.quizapp.history;
+package com.geektech.quizapp.presentation.history;
 
 import androidx.lifecycle.ViewModel;
 

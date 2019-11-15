@@ -1,4 +1,4 @@
-package com.geektech.quizapp.history;
+package com.geektech.quizapp.presentation.history.recycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +24,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 5;
     }
 }

@@ -1,16 +1,11 @@
-package com.geektech.quizapp.main;
+package com.geektech.quizapp.presentation.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.geektech.quizapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
