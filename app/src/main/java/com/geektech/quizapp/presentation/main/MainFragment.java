@@ -17,11 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.geektech.quizapp.R;
 import com.geektech.quizapp.presentation.quiz.QuizActivity;
+
+import org.angmarch.views.NiceSpinner;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -30,11 +33,11 @@ public class MainFragment extends Fragment {
 
     private MainViewModel mViewModel;
 
-    SeekBar seekBar;
+    SeekBar seek_bar;
     TextView questionAmount10;
     Button btnStart;
-    AppCompatSpinner categorySpinner;
-    AppCompatSpinner difficultySpinner;
+    NiceSpinner categorySpinner;
+    NiceSpinner difficultySpinner;
 
 
 
@@ -53,25 +56,28 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         questionAmount10 = view.findViewById(R.id.questionAmount10);
+        categorySpinner = view.findViewById(R.id.categorySpinner);
+        difficultySpinner = view.findViewById(R.id.difficultySpinner);
+
         btnStart = view.findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),QuizActivity.class);
-                startActivity(intent);
-                Toast.makeText(getActivity(),"Cliked", Toast.LENGTH_SHORT).show();
+            QuizActivity.start(getContext(),
+                    seek_bar.getProgress(),
+                    categorySpinner.getSelectedItem().toString(),
+                    difficultySpinner.getSelectedItem().toString());
             }
         });
-        seekBar = view.findViewById(R.id.seekbar);
-        seekBar.setProgress(50);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        seek_bar = view.findViewById(R.id.seek_bar);
+        seek_bar.setProgress(5);
+        seek_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 if (i < 6) {
                     seekBar.setProgress(5);
                 }
                 questionAmount10.setText(String.valueOf(seekBar.getProgress()));
-                //questionAmount10.setText(""+i+"");
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {

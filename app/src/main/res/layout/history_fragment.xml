@@ -9,19 +9,16 @@
 
     <TextView
         android:id="@+id/hTextview"
+        style="@style/TitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
+        android:theme="@style/GreyAccent"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -32,6 +29,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/hTextview">
     </androidx.recyclerview.widget.RecyclerView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

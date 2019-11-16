@@ -63,12 +63,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Difficulty"
-                app:layout_constraintTop_toBottomOf="@id/r_catTexView"/>
+                android:layout_marginTop="39dp"
+                app:layout_constraintTop_toBottomOf="@id/r_catTexView"
+                app:layout_constraintRight_toLeftOf="@id/r_catTexView"/>
+
+            <TextView
+                android:id="@+id/all_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All"
+                app:layout_constraintBottom_toBottomOf="@id/r_difTextview"
+                app:layout_constraintBottom_toTopOf="@id/r_difTextview"
+                app:layout_constraintTop_toBottomOf="@id/r_difTextview"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="51dp"
+                tools:ignore="MissingConstraints" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
