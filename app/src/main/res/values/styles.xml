@@ -54,4 +54,131 @@
             <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
         </style>
 
-    </resources>
+    <style name="QuizQuestionAnswers">
+        <item name="android:paddingTop">11dp</item>
+        <item name="android:paddingBottom">11dp</item>
+        <item name="android:layout_marginEnd">51dp</item>
+        <item name="android:layout_marginStart">51dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font_certs/sf_text_semi_bold</item>
+    </style>
+
+    <style name="btn_main_style">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">64dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="m_question_txt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_marginStart">64dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginLeft">64dp</item>
+    </style>
+
+    <style name="m_questionAmount10_txt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+    </style>
+
+    <style name="m_seek_bar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:max">50</item>
+        <item name="android:progress">10</item>
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:layout_marginEnd">50dp</item>
+    </style>
+
+    <style name="m_categoryLabel">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginStart">64dp</item>
+        <item name="android:layout_marginEnd">64dp</item>
+    </style>
+
+    <style name="m_categorySpinner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginRight">64dp</item>
+        <item name="android:layout_marginLeft">64dp</item>
+    </style>
+
+    <style name="m_difficultyLabel_txt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/light_grey</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginLeft">64dp</item>
+    </style>
+
+    <style name="m_qImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="st_share_this_app">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="st_rate_us_app">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="st_leaveFeedback">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="st_clear_history">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:textColor">@color/purple</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+
+</resources>
