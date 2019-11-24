@@ -26,6 +26,6 @@ public class QuizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 3;
     }
 }

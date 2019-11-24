@@ -2,7 +2,13 @@ package com.geektech.quizapp.data;
 
 import android.util.Log;
 
+import com.geektech.quizapp.data.model.CategoriesGlobalResponse;
 import com.geektech.quizapp.data.model.QuestionsResponse;
+import com.geektech.quizapp.model.Question;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,10 +28,20 @@ Retrofit retrofit = new Retrofit.Builder()
 
     private TriviaNetworkClient client = retrofit.create(TriviaNetworkClient.class);
 
+    private Question shuffleAnsvers(Question question){
+        ArrayList<String> answers = new ArrayList<>();
+
+        answers.add(question.getCorrectAnswer());
+        answers.addAll(question.getIncorrectAnswers());
+
+        Collections.shuffle(answers);
+        question.setAnswers(answers);
+        return question;
+    }
 
     @Override
     public void getQuiz(OnQuizCallback callback) {
-        callback.onFailure(new Exception("Remote data source not initialized"));
+//        callback.onFailure(new Exception("Remote data source not initialized"));
         Call<QuestionsResponse> call = client.getQuestions(
                 10,
                 null,
@@ -39,6 +55,10 @@ Retrofit retrofit = new Retrofit.Builder()
             public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
                 if (response.isSuccessful()) {
                     if (response.body() != null) {
+                        for (int i = 0; i < response.body().getResults().size(); i++){
+                            Question question = response.body().getResults().get(i);
+                            response.body().getResults().set(i, shuffleAnsvers(question));
+                        }
                         callback.onSuccess(response.body().getResults());
                     } else {
                         callback.onFailure(new Exception("Remote data source not initialized"));
@@ -68,6 +88,9 @@ Retrofit retrofit = new Retrofit.Builder()
                 @Query("category") Integer category,
                 @Query("difficulty") String difficulty
         );
+
+        @GET("/api_count_global.php")
+        Call<CategoriesGlobalResponse> getCategoriesGlobal();
     }
 
 

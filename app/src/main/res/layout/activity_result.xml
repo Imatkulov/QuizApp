@@ -99,6 +99,13 @@
                 app:layout_constraintRight_toRightOf="@id/r_category_textView"
                 app:layout_constraintLeft_toLeftOf="@id/r_category_textView"/>
 
+            <TextView
+                android:id="@+id/r_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result"
+                app:layout_constraintLeft_toRightOf="@+id/r_category_textView"
+                app:layout_constraintRight_toRightOf="parent"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
