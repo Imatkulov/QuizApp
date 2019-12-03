@@ -11,11 +11,11 @@ import com.geektech.quizapp.R;
 
 public class HIstoryViewHolder extends RecyclerView.ViewHolder {
 
-    TextView catTxtView;
-    TextView corTextView;
-    TextView difTexView;
-    ImageView hImageView;
-    TextView hDateTextView;
+    public TextView catTxtView;
+    public TextView corTextView;
+    public TextView difTexView;
+    public ImageView hImageView;
+    public TextView hDateTextView;
 
     public HIstoryViewHolder(@NonNull View itemView) {
         super(itemView);

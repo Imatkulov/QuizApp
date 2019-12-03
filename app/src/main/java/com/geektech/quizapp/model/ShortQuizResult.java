@@ -8,12 +8,16 @@ public class ShortQuizResult {
     private int questionsAmount;
     private int correctAnswers;
     private Date createdAt;
+    private String category;
+    private String difficulty;
 
-    public ShortQuizResult(int id, int questionsAmount, int correctAnswers, Date createdAt) {
+    public ShortQuizResult(int id, int questionsAmount, int correctAnswers, String category, String difficulty, Date createdAt) {
         this.id = id;
         this.questionsAmount = questionsAmount;
         this.correctAnswers = correctAnswers;
         this.createdAt = createdAt;
+        this.category = category;
+        this.difficulty = difficulty;
     }
 
     public int getId() {
@@ -47,4 +51,20 @@ public class ShortQuizResult {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
+    public String getCategory(){
+        return category;
+    }
+    public void setCategory( String category ){
+        this.category = category;
+    }
+
+    public String getDifficulty (){
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty){
+        this.difficulty =  difficulty;
+    }
+
 }

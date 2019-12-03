@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:usesCleartextTraffic="true"
+
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".presentation.result.ResultActivity"></activity>
+        <activity  android:name=".presentation.splash.SplashActivity"/>
+           <activity android:name=".presentation.result.ResultActivity"></activity>
         <activity android:name=".presentation.quiz.QuizActivity" />
         <activity android:name=".presentation.main.MainActivity">
             <intent-filter>

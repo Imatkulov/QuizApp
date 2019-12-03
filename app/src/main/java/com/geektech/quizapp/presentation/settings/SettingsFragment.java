@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.geektech.quizapp.R;
 
@@ -18,8 +19,24 @@ public class SettingsFragment extends Fragment {
 
     private SettingsViewModel mViewModel;
 
+    TextView textView;
+
+
     public static SettingsFragment newInstance() {
         return new SettingsFragment();
+    }
+
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        textView = view.findViewById(R.id.clear_history);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mViewModel.clearHistory();
+            }
+        });
     }
 
     @Override

@@ -8,12 +8,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.geektech.quizapp.R;
+import com.geektech.quizapp.presentation.splash.SplashActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
+
+    public static void start(SplashActivity splashActivity) {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

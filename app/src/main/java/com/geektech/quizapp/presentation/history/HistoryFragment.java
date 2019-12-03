@@ -1,5 +1,6 @@
 package com.geektech.quizapp.presentation.history;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -15,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.geektech.quizapp.R;
+import com.geektech.quizapp.model.ShortQuizResult;
 import com.geektech.quizapp.presentation.history.recycler.HistoryAdapter;
+
+import java.util.List;
 
 public class HistoryFragment extends Fragment {
 
@@ -37,17 +41,20 @@ public class HistoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mViewModel = ViewModelProviders.of(this).get(HistoryViewModel.class);
         recyclerView = view.findViewById(R.id.recyclerView);
+        initRecycler();
+    }
+
+    private void initRecycler() {
         historyAdapter = new HistoryAdapter();
         recyclerView.setAdapter(historyAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
+        mViewModel.listLiveData.observe(this, new Observer<List<ShortQuizResult>>() {
+            @Override
+            public void onChanged(List<ShortQuizResult> shortQuizResults) {
+                historyAdapter.setHistorie(shortQuizResults);
+            }
+        });
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(HistoryViewModel.class);
-        // TODO: Use the ViewModel
-    }
-
 }

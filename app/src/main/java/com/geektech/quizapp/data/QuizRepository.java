@@ -21,7 +21,7 @@ import retrofit2.http.Query;
 public class QuizRepository implements IQuizRepository{
 
 Retrofit retrofit = new Retrofit.Builder()
-        .baseUrl("https://opentbd.com")
+        .baseUrl("https://opentdb.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 
@@ -40,16 +40,13 @@ Retrofit retrofit = new Retrofit.Builder()
     }
 
     @Override
-    public void getQuiz(OnQuizCallback callback) {
-//        callback.onFailure(new Exception("Remote data source not initialized"));
+    public void getQuiz(Integer amount, Integer id, String difficulty, OnQuizCallback callback) {
+
         Call<QuestionsResponse> call = client.getQuestions(
-                10,
-                null,
-                null
+                amount,
+                id,
+                difficulty
         );
-
-        Log.d("ololo", call.request().url().toString());
-
         call.enqueue(new Callback<QuestionsResponse>() {
             @Override
             public void onResponse(Call<QuestionsResponse> call, Response<QuestionsResponse> response) {
@@ -75,24 +72,12 @@ Retrofit retrofit = new Retrofit.Builder()
         });
     }
 
-//    https://opentdb.com/api.php?amount=10 & category=9 & difficulty=easy
-
-//    https://opentdb.com - BASE URL
-//    api.php - QUESTIONS API FUNCTION ENDPOINT
-//    amount=10 & category=9 & difficulty=easy - QUERY
-
     private interface TriviaNetworkClient {
         @GET("/api.php")
         Call<QuestionsResponse> getQuestions(
-                @Query("amount") int amount,
+                @Query("amount") Integer amount,
                 @Query("category") Integer category,
                 @Query("difficulty") String difficulty
         );
-
-        @GET("/api_count_global.php")
-        Call<CategoriesGlobalResponse> getCategoriesGlobal();
     }
-
-
-
 }

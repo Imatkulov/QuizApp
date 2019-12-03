@@ -58,48 +58,34 @@ public class MainFragment extends Fragment {
         questionAmount10 = view.findViewById(R.id.questionAmount10);
         categorySpinner = view.findViewById(R.id.categorySpinner);
         difficultySpinner = view.findViewById(R.id.difficultySpinner);
-
+        seek_bar = view.findViewById(R.id.seek_bar);
         btnStart = view.findViewById(R.id.btnStart);
+
+
+        seek_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+
+                questionAmount10.setText(String.valueOf(progress));
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
+
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int categoryId = 0;
+                if (categorySpinner.getSelectedIndex() != 0){
+                    categoryId = categorySpinner.getSelectedIndex() + 8;
+                }
             QuizActivity.start(getContext(),
                     seek_bar.getProgress(),
-                    categorySpinner.getSelectedItem().toString(),
-                    difficultySpinner.getSelectedItem().toString());
-            }
-        });
-        seek_bar = view.findViewById(R.id.seek_bar);
-        seek_bar.setProgress(5);
-        seek_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                if (i < 6) {
-                    seekBar.setProgress(5);
-                }
-                questionAmount10.setText(String.valueOf(seekBar.getProgress()));
-            }
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getContext(),"Пользователь изменил", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                Toast.makeText(getContext(),"Пользователь перестал", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
-        Executor executor = Executors.newSingleThreadExecutor();
-        executor.execute(new Runnable() {
-            @Override
-            public void run() {
-
+                    categoryId,
+                    difficultySpinner.getSelectedItem().toString().toLowerCase());
             }
         });
     }
